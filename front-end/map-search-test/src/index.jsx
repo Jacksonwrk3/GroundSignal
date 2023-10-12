@@ -1,8 +1,14 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-// Clear the existing HTML content
+import { createStore, applyMiddleware } from "redux";
+import allReducers from "./reducer/index.js";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+const store = createStore(allReducers, applyMiddleware(thunk));
 document.body.innerHTML = '<div id="app"></div>';
-console.log("hello");
-// Render your React component instead
 const root = createRoot(document.getElementById("app"));
-root.render(<App />);
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);

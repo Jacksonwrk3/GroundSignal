@@ -1,0 +1,11 @@
+/* Leaflet z-index is too high, can't overlay we had to use this code snippet to lower z-index */
+.leaflet-control {
+  z-index: 0 !important;
+}
+.leaflet-pane {
+  z-index: 0 !important;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 0 !important;
+}
