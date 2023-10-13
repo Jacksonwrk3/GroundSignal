@@ -2,9 +2,32 @@ import React from "react";
 import { useSelector } from "react-redux";
 import WebsiteLink from "./WebsiteLink.jsx";
 import Gallery from "./Gallery.jsx";
+import BarChart from "./BarChart.jsx";
 const LocationDetails = () => {
   const locationInfo = useSelector((state) => state.currentLocation);
-  console.log(locationInfo);
+  let days;
+  let traffic;
+  let storeData;
+  if (locationInfo.details) {
+    if (locationInfo.details.avgStoreTraffic) {
+      days = [];
+      traffic = [];
+      for (let dayOfWeek in locationInfo.details.avgStoreTraffic) {
+        days.push(dayOfWeek);
+        traffic.push(locationInfo.details.avgStoreTraffic[dayOfWeek]);
+      }
+      storeData = {
+        labels: days,
+        datasets: [
+          {
+            label: "Average Store Traffic",
+            data: traffic,
+          },
+        ],
+      };
+    }
+  }
+
   if (locationInfo) {
     return (
       <div className="bg-white z-11 rounded-md opacity-100 w-1/3 ">
@@ -36,13 +59,18 @@ const LocationDetails = () => {
             <div className="w-11/12 mx-auto">
               {locationInfo.images ? (
                 <Gallery
-                  className="mb-4"
+                  className="mb-8"
                   colNum="3"
                   gapNum="2"
                   images={locationInfo.images}
                 />
               ) : null}
             </div>
+            {storeData ? (
+              <div className="w-11/12 mx-auto">
+                <BarChart data={storeData} />
+              </div>
+            ) : null}
           </>
         ) : (
           <div className="w-full flex justify-center my-4 text-red-400">
