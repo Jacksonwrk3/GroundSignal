@@ -9,7 +9,7 @@ var sampleData = [
     details: {
       description:
         "We buy and sell used bikes and equipment. Contact us today to get moving!",
-      website: "https://groundsignal.com",
+      website: "https://www.groundsignal.com",
     },
     images: [
       "http://dspncdn.com/a1/media/692x/f8/58/77/f85877c41fb6147599886048e3582d47.jpg",
@@ -27,7 +27,7 @@ var sampleData = [
     details: {
       description:
         "We sell the coldest ice cream you've ever had! It's freezing cold. Literally.",
-      website: "https://groundsignal.com",
+      website: "https://www.groundsignal.com",
       avgStoreTraffic: {
         monday: null,
         tuesday: 504,
@@ -54,7 +54,7 @@ var sampleData = [
     details: {
       description:
         "The nations largest provider of car washes since 1907. Come in and enjoy a car wash that will literally peel the rust right off!",
-      website: "https://groundsignal.com",
+      website: "https://www.groundsignal.com",
     },
     images: [
       "https://rainbowgram.files.wordpress.com/2015/03/fe8de-10787805_946218992085237_543029709_n.jpg?w=640",
