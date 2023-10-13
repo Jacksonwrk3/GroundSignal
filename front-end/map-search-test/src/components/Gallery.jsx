@@ -6,6 +6,7 @@ const Gallery = (props) => {
     return (
       <img
         src={imageURL}
+        key={imageURL}
         // some of the image links are broken, so instead of loading an empty box with the image icon on it, if there is an error loading that image, we won't load it at all
         onError={(e) => {
           e.target.style.display = "none";

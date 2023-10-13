@@ -37,12 +37,12 @@ const LocationDetails = () => {
               {locationInfo.images ? (
                 <Gallery
                   className="mb-4"
-                  colNum={3}
-                  gapNum={2}
+                  colNum="3"
+                  gapNum="2"
                   images={locationInfo.images}
                 />
               ) : null}
-            </div>{" "}
+            </div>
           </>
         ) : (
           <div className="w-full flex justify-center my-4 text-red-400">
