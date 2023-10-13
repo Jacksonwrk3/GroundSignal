@@ -1,6 +1,6 @@
 import React from "react";
 import sampleData from "../../data/sample-data.js";
-import LocationCard from "../UI/LocationCard.jsx";
+import LocationCard from "./LocationCard.jsx";
 import { relocate } from "../actions/index.js";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -25,20 +25,8 @@ const MatchedList = () => {
       <LocationCard
         key={location.id}
         clickHandler={listItemHandler}
-        locationInfo={location}
-      >
-        <div className="h-full w-full flex flex-row items-center ">
-          <img src="icon-pin.svg" alt="Pin Icon" className="h-6 ml-4 mr-4" />
-          <div className="flex flex-col">
-            <span className="font-bold">{location.name}</span>
-            <div>
-              <span>
-                {location.location.lat}, {location.location.lon}
-              </span>
-            </div>
-          </div>
-        </div>
-      </LocationCard>
+        location={location}
+      />
     ));
     return (
       <div>
